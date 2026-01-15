@@ -34,7 +34,6 @@ function Server({ selected, setSelected }) {
 
   const handleAdd = (id) => {
     setSelected((item) => {
-      if (item.includes(id)) return prev;
       return [...item, id];
     });
   };

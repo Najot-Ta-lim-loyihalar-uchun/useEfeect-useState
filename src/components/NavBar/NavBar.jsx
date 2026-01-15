@@ -1,6 +1,7 @@
 import React from "react";
 
 import Style from "./NavBar.module.css";
+import { Link } from "react-router-dom";
 
 const { nav_container, nav_bar, page_link, cart, cart_box, cart_indecator } =
   Style;
@@ -17,14 +18,14 @@ function NavBar({ selectedCount }) {
         </div>
         <ul className={`${nav_bar}`}>
           <li>
-            <a href="#" className={page_link}>
+            <Link to="/" className={page_link}>
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className={page_link}>
-              New
-            </a>
+            <Link to="/users" className={page_link}>
+              Users
+            </Link>
           </li>
         </ul>
 
