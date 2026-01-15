@@ -10,6 +10,13 @@ function Server({ selected, setSelected }) {
   const [loading, setLoading] = useState(true);
   const [limit, setLimit] = useState(20);
 
+  /* random imgs */
+  let min = 1;
+  let max = limit;
+  const RandomImgNum = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+
   useEffect(() => {
     async function get_data() {
       try {
@@ -51,12 +58,15 @@ function Server({ selected, setSelected }) {
     <>
       <section className="ServerPngs">
         {posts.map((curVel) => {
-          let { id, title, thumbnailUrl } = curVel;
+          let { id, title } = curVel;
           const isAdded = selected.includes(id);
 
           return (
             <div key={id} className="pngBox">
-              <img src={thumbnailUrl} alt={title} />
+              <img
+                src={`https://picsum.photos/300/300?${RandomImgNum(min, max)}`}
+                alt={title}
+              />
               <h3 className="title">{title}</h3>
               <div className="cardControls">
                 <button onClick={() => handleRemove(id)} disabled={!isAdded}>
