@@ -11,15 +11,15 @@ function NavBar({ selectedCount }) {
     <nav>
       <div className={`${nav_container} container`}>
         <div className="logo">
-          <a href="#">
+          <Link to="/">
             <i className="bx bxs-castle"></i>
             Castle.<span className="add_title">img</span>
-          </a>
+          </Link>
         </div>
         <ul className={`${nav_bar}`}>
           <li>
             <Link to="/" className={page_link}>
-              Home
+              Pictures
             </Link>
           </li>
           <li>

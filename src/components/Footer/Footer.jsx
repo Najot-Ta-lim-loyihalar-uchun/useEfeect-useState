@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import "../../index.css";
 import style from "./Footer.module.css";
 
@@ -11,10 +13,10 @@ function Footer() {
       <section className={`${about_site} container`}>
         <div className="">
           <div className="logo">
-            <a href="#">
+            <Link to="/">
               <i className="bx bxs-castle"></i>
               Castle.<span className="add_title">img</span>
-            </a>
+            </Link>
           </div>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ipsam
