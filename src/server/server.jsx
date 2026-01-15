@@ -32,17 +32,17 @@ function Server({ selected, setSelected }) {
 
   if (loading) return <p>Yuklanmoqda...</p>;
 
-  const handleAdd = (id) => {
+  const AddItem = (id) => {
     setSelected((item) => {
       return [...item, id];
     });
   };
 
-  const handleRemove = (id) => {
+  const RemoveItem = (id) => {
     setSelected((item) => item.filter((x) => x !== id));
   };
 
-  const handleShowMore = () => {
+  const ShowMoreItem = () => {
     setLimit((items) => items + 20);
   };
 
@@ -58,10 +58,10 @@ function Server({ selected, setSelected }) {
               <img src={thumbnailUrl} alt={title} />
               <h3 className="title">{title}</h3>
               <div className="cardControls">
-                <button onClick={() => handleRemove(id)} disabled={!isAdded}>
+                <button onClick={() => RemoveItem(id)} disabled={!isAdded}>
                   O'chir
                 </button>
-                <button onClick={() => handleAdd(id)} disabled={isAdded}>
+                <button onClick={() => AddItem(id)} disabled={isAdded}>
                   Qo'sh
                 </button>
               </div>
@@ -69,7 +69,7 @@ function Server({ selected, setSelected }) {
           );
         })}
       </section>
-      <button className="more_imgs" onClick={handleShowMore}>
+      <button className="more_imgs" onClick={ShowMoreItem}>
         Add +20
       </button>
     </>
